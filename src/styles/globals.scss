@@ -1,0 +1,44 @@
+:root {
+  --white: #f0f0f0;
+  --background: #0a0a0a;
+  --dark-wave: #171717;
+  --text: #0a0a0a;
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-height: 100dvh;
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+  background: var(--background) url('/wave.svg') no-repeat bottom center;
+  background-size: contain;
+  font-family: Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, p, span {
+   color: (--text);
+}
+
+.container {
+  width: 100%;
+  max-width: 95rem;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+}
