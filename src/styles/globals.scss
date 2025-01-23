@@ -1,8 +1,11 @@
 :root {
   --white: #f0f0f0;
   --background: #0a0a0a;
+  --button: #fca311;
+  --button-hover: #e6920c;
   --dark-wave: #171717;
   --text: #0a0a0a;
+  --light-text: #333333;
 }
 
 html,
@@ -15,7 +18,7 @@ body {
   color: var(--text);
   background: var(--background);
   background: var(--background) url('/wave.svg') no-repeat bottom center;
-  background-size: contain;
+  background-size: cover;
   font-family: Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -36,9 +39,55 @@ h1, h2, h3, p, span {
    color: (--text);
 }
 
+button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
 .container {
   width: 100%;
   max-width: 95rem;
   padding: 2rem 1rem;
   margin: 0 auto;
+}
+
+.flex-row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.white-text {
+  color: var(--white);
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  input {
+    flex: 1;
+    padding-right: 2.5rem;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #666;
+
+    &:hover {
+      color: #000;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
