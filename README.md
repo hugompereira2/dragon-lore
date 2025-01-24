@@ -49,6 +49,14 @@ npm run dev
 http://localhost:3000
 ```
 
+## 🔑 Credenciais de Login ##
+
+Utilize as credenciais abaixo para acessar a aplicação:
+
+Email: dragonlore@gmail.com
+
+Senha: dragonLore@123
+
 ## 🧪 Rodando os Testes ##
 
 ```sh
