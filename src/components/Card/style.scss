@@ -1,0 +1,31 @@
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  background-color: var(--white);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 24px 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .card-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-description {
+    color: var(--light-text);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-elemental {
+    position: absolute;
+    gap: 8px;
+    top: 15px;
+    right: 15px;
+  }
+}
