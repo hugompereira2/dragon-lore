@@ -48,3 +48,9 @@ npm run dev
 ```sh
 http://localhost:3000
 ```
+
+## 🧪 Rodando os Testes ##
+
+```sh
+npm run test
+```
