@@ -1,11 +1,17 @@
 :root {
   --white: #f0f0f0;
   --background: #0a0a0a;
-  --button: #fca311;
-  --button-hover: #e6920c;
   --dark-wave: #171717;
   --text: #0a0a0a;
   --light-text: #333333;
+
+  --primary: #007bff;
+  --primary-weak: #0056b3;
+  --primary-strong: #004085;
+
+  --secondary: #f8f9fa;
+  --secondary-weak: #e2e6ea;
+  --secondary-strong: #dae0e5;
 }
 
 html,
@@ -47,19 +53,32 @@ button:disabled {
 .container {
   width: 100%;
   max-width: 95rem;
-  padding: 2rem 1rem;
+  padding: 1rem;
   margin: 0 auto;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55dvh;
 }
 
 .flex-row-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .white-text {
   color: var(--white);
+}
+
+.link-underline {
+  text-decoration: underline;
 }
 
 .password-wrapper {

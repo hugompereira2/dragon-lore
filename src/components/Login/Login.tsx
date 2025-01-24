@@ -2,12 +2,12 @@
 
 import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import './style.scss';
-import Image from "next/image";
 import { useAlert } from "@/hooks/useAlert";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import Loader from "../Loader/Loader";
 import Cookies from "js-cookie";
+import './style.scss';
 
 interface LoginFormInputs {
   email: string;
@@ -53,7 +53,7 @@ export function Login() {
   return (
     <div className="login-wrapper">
       <form className="login-form" onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Image className="logo" src={'/assets/logo/logo.svg'} alt={`Logo Dragão`} width={90} height={90} />
+        <Image className="logo" src={'/assets/logo/logo-black.svg'} alt={`Logo Dragão`} width={90} height={90} />
         <h1 className="login-title">Bem-vindo de volta</h1>
         <p className="login-subtitle">Faça login para continuar</p>
 

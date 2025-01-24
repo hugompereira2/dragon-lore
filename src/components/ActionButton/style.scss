@@ -1,0 +1,54 @@
+.action-button-component {
+  display: inline-block;
+  flex: 0 1 10rem;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+
+  &.primary {
+    background-color: var(--primary);
+    color: #ffffff;
+
+    &:hover {
+      background-color: var(--primary-weak);
+    }
+
+    &:active {
+      background-color: var(--primary-strong);
+      opacity: 0.9;
+    }
+  }
+
+  &.secondary {
+    background-color: var(--secondary);
+    color: #000000;
+
+    &:hover {
+      background-color: var(--secondary-weak);
+    }
+
+    &:active {
+      background-color: var(--secondary-strong);
+      opacity: 0.9;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .action-button-component {
+    flex: 1 1 10rem;
+  }
+}

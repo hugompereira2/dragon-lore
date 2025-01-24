@@ -1,5 +1,6 @@
 'use client'
 
+import { ActionButton } from "@/components/ActionButton/ActionButton";
 import { ConfirmModal } from "@/components/ConfirmModal/ConfirmModal";
 import { EditCreateModal } from "@/components/EditCreateModal/EditCreateModal";
 import Navbar from "@/components/Navbar/Navbar";
@@ -16,16 +17,18 @@ export default function HomePage() {
   const [mode, setMode] = useState<'edit' | 'create'>('edit');
   const [selectedDragon, setSelectedDragon] = useState<Dragon | null>(null);
 
-  const { data: dragons, isLoading, error } = useQuery({
+  const { data: dragons } = useQuery({
     queryKey: ['fetchDragons'],
     queryFn: () => fetchDragons(),
     refetchOnWindowFocus: false
   })
 
-  const formattedDragons = dragons?.map((dragon) => ({
+  const formattedDragons = dragons
+  ?.map((dragon) => ({
     ...dragon,
     createdAt: formatToBrazilianDate(dragon.createdAt),
-  }));
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
   const handleEditClick = (dragon: Dragon) => {
     setMode('edit')
@@ -54,9 +57,9 @@ export default function HomePage() {
     setSelectedDragon(null);
   };
 
-  const columns: { field: keyof Dragon; headerName: string; flex: number }[] = [
+  const columns: { field: keyof Dragon; headerName: string; flex: number; renderCell?: (row: Dragon) => React.ReactNode }[] = [
     { field: "id", headerName: "ID", flex: 1 },
-    { field: "name", headerName: "Nome", flex: 1 },
+    { field: "name", headerName: "Nome", flex: 1, renderCell: (row) => <a className="link-underline" href={`/dragon/${row.id}`}>{row.name}</a> },
     { field: "type", headerName: "Tipo", flex: 1 },
     { field: "createdAt", headerName: "Data", flex: 1 },
   ];
@@ -90,7 +93,7 @@ export default function HomePage() {
       <Navbar />
       <div className="flex-row-between">
         <h1 className="white-text">Dragões {formattedDragons && formattedDragons?.length > 0 ? `(${formattedDragons?.length})` : null}</h1>
-        <button className="blue-button" onClick={handleCreateClick}>Cadastrar</button>
+        <ActionButton label="Cadastrar" onClick={handleCreateClick} variant="secondary" />
       </div>
       <Table
         columns={columns}
